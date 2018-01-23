@@ -16,6 +16,7 @@ $emailErr = '';
 $usernameErr = '';
 $passwordErr = '';
 
+/*
 // Click 'Register' button
 if (isset($_POST['Register'])) {
 
@@ -34,6 +35,22 @@ if (isset($_POST['Register'])) {
 	}
 
 }
+*/
+
+// MySQL database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+try {
+	$conn = new PDO("mysql:host=$servername;dbname=php-project", $username, $password);
+	// set the PDO error mode to exception
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	echo "Connected successfully";
+} catch(PDOException $e) {
+	echo "Connection failed: " . $e->getMessage();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,27 +62,27 @@ if (isset($_POST['Register'])) {
 <body>
 
 <form action="" method="post">
-	<label for="first_name">First name:</label><br/>
+	<label for="first_name">First name</label><br/>
 	<input type="text" name="first_name" id="first_name" value="<?php echo $firstnameInput; ?>" /><br/>
 	<!-- Error message -->
 	<?php echo $firstnameErr; ?><br/>
 	<!-- / Error message -->
-	<label for="last_name">Last name:</label><br/>
+	<label for="last_name">Last name</label><br/>
 	<input type="text" name="last_name" id="last_name" value="<?php echo $lastnameInput; ?>" /><br/>
 	<!-- Error message -->
 	<?php echo $lastnameErr; ?><br/>
 	<!-- / Error message -->
-	<label for="e_mail">Email:</label><br/>
+	<label for="e_mail">Email</label><br/>
 	<input type="text" name="e_mail" id="e_mail" value="<?php echo $emailInput; ?>" /><br/>
 	<!-- Error message -->
 	<?php echo $emailErr; ?><br/>
 	<!-- / Error message -->
-	<label for="user_name">Username:</label><br/>
+	<label for="user_name">Username</label><br/>
 	<input type="text" name="user_name" id="user_name" value="<?php echo $usernameInput; ?>" /><br/>
 	<!-- Error message -->
 	<?php echo $usernameErr; ?><br/>
 	<!-- / Error message -->
-	<label for="pass_word">Password:</label><br/>
+	<label for="pass_word">Password</label><br/>
 	<input type="password" name="pass_word" id="pass_word" value="<?php echo $passwordInput; ?>" /><br/>
 	<!-- Error message -->
 	<?php echo $passwordErr; ?><br/>
