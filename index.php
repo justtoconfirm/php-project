@@ -46,10 +46,17 @@ try {
 	$conn = new PDO("mysql:host=$servername;dbname=php-project", $username, $password);
 	// set the PDO error mode to exception
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	echo "Connected successfully";
+	// Insert default values for testing
+	$sql = "INSERT INTO users (firstname, lastname) VALUES ('John', 'Smith')";
+	$conn->exec($sql);
+	echo "New record added to database";
+	//echo "Connected successfully";
 } catch(PDOException $e) {
-	echo "Connection failed: " . $e->getMessage();
+	//echo "Connection failed: " . $e->getMessage();
+	echo $sql . "<br>" . $e->getMessage();
 }
+
+$conn = null;
 
 ?>
 
