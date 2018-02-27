@@ -37,26 +37,31 @@ if (isset($_POST['Register'])) {
 }
 */
 
-// MySQL database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
+if (isset($_POST['Register'])) {
 
-try {
-	$conn = new PDO("mysql:host=$servername;dbname=php-project", $username, $password);
-	// set the PDO error mode to exception
-	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	// Insert default values for testing
-	$sql = "INSERT INTO users (firstname, lastname) VALUES ('John', 'Smith')";
-	$conn->exec($sql);
-	echo "New record added to database";
-	//echo "Connected successfully";
-} catch(PDOException $e) {
-	//echo "Connection failed: " . $e->getMessage();
-	echo $sql . "<br>" . $e->getMessage();
+	// MySQL database connection
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+
+	try {
+		$conn = new PDO("mysql:host=$servername;dbname=php-project", $username, $password);
+		// set the PDO error mode to exception
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		// Insert default values for testing
+		//$sql = "INSERT INTO users (firstname, lastname) VALUES ('John', 'Smith')";
+		$sql = "INSERT INTO users (firstname, lastname) VALUES ('".$_POST["first_name"]."','".$_POST["last_name"]."')";
+		$conn->exec($sql);
+		echo "New record added to database";
+		//echo "Connected successfully";
+	} catch(PDOException $e) {
+		//echo "Connection failed: " . $e->getMessage();
+		echo $sql . "<br>" . $e->getMessage();
+	}
+
+	$conn = null;
+
 }
-
-$conn = null;
 
 ?>
 
