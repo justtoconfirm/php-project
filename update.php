@@ -1,3 +1,5 @@
+<?php include "templates/header.php"; ?>
+
 <?php
 /**
  * List all users with a link to edit
@@ -46,3 +48,5 @@ try {
 </table>
 
 <a href="index.php">Back to home</a>
+
+<?php include "templates/footer.php"; ?>

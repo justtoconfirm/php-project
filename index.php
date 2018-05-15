@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>PHP Project</title>
-</head>
-<body>
+<?php include "templates/header.php"; ?>
 
 <ul>
 	<li><a href="create.php">Create</a> - add a user</li>
@@ -13,5 +7,4 @@
 	<li><a href="delete.php">Delete</a> - delete a user</li>
 </ul>
 
-</body>
-</html>
+<?php include "templates/footer.php"; ?>

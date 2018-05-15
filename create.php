@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>PHP Project - Create</title>
-
-<style>
-label {
-	display: block;
-	margin: 5px 0;
-}
-</style>
-
-</head>
-<body>
+<?php include "templates/header.php"; ?>
 
 <?php
 if (isset($_POST['submit'])) {
@@ -57,5 +43,4 @@ if (isset($_POST['submit'])) {
 
 <a href="index.php">Back to home</a>
 
-</body>
-</html>
+<?php include "templates/footer.php"; ?>

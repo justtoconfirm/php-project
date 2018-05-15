@@ -1,3 +1,5 @@
+<?php include "templates/header.php"; ?>
+
 <?php
 /**
  * Function to query information based on 
@@ -66,3 +68,5 @@ if (isset($_POST['submit'])) {
 </form>
 
 <a href="index.php">Back to home</a>
+
+<?php include "templates/footer.php"; ?>

@@ -1,3 +1,5 @@
+<?php include "templates/header.php"; ?>
+
 <?php
 /**
  * Use an HTML form to edit an entry in the
@@ -69,3 +71,5 @@ if (isset($_GET['id'])) {
 </form>
 
 <a href="index.php">Back to home</a>
+
+<?php include "templates/footer.php"; ?>

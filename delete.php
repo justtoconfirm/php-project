@@ -1,3 +1,5 @@
+<?php include "templates/header.php"; ?>
+
 <?php
 /**
  * Delete a user
@@ -59,3 +61,5 @@ try {
 </table>
 
 <a href="index.php">Back to home</a>
+
+<?php include "templates/footer.php"; ?>
