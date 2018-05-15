@@ -1,11 +1,11 @@
-<?php include "templates/header.php"; ?>
+<?php include "../templates/header.php"; ?>
 
 <?php
 /**
  * Delete a user
  */
-require "config.php";
-require "common.php";
+require "../config.php";
+require "../common.php";
 if (isset($_GET["id"])) {
   try {
     $connection = new PDO($dsn, $username, $password, $options);
@@ -60,6 +60,6 @@ try {
   </tbody>
 </table>
 
-<a href="index.php">Back to home</a>
+<a href="../index.php">Back to home</a>
 
-<?php include "templates/footer.php"; ?>
+<?php include "../templates/footer.php"; ?>

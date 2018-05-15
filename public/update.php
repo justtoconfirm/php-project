@@ -1,11 +1,11 @@
-<?php include "templates/header.php"; ?>
+<?php include "../templates/header.php"; ?>
 
 <?php
 /**
  * List all users with a link to edit
  */
-require "config.php";
-require "common.php";
+require "../config.php";
+require "../common.php";
 try {
   $connection = new PDO($dsn, $username, $password, $options);
   $sql = "SELECT * FROM users";
@@ -47,6 +47,6 @@ try {
     </tbody>
 </table>
 
-<a href="index.php">Back to home</a>
+<a href="../index.php">Back to home</a>
 
-<?php include "templates/footer.php"; ?>
+<?php include "../templates/footer.php"; ?>

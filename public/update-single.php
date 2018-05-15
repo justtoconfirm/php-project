@@ -1,4 +1,4 @@
-<?php include "templates/header.php"; ?>
+<?php include "../templates/header.php"; ?>
 
 <?php
 /**
@@ -6,8 +6,8 @@
  * users table.
  *
  */
-require "config.php";
-require "common.php";
+require "../config.php";
+require "../common.php";
 if (isset($_POST['submit'])) {
   if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
   try {
@@ -70,6 +70,6 @@ if (isset($_GET['id'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="../index.php">Back to home</a>
 
-<?php include "templates/footer.php"; ?>
+<?php include "../templates/footer.php"; ?>

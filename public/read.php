@@ -1,4 +1,4 @@
-<?php include "templates/header.php"; ?>
+<?php include "../templates/header.php"; ?>
 
 <?php
 /**
@@ -9,8 +9,8 @@
 if (isset($_POST['submit'])) {
     try  {
         
-        require "config.php";
-        require "common.php";
+        require "../config.php";
+        require "../common.php";
 
         $connection = new PDO($dsn, $username, $password, $options);
         $sql = "SELECT * 
@@ -67,6 +67,6 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="View Results">
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="../index.php">Back to home</a>
 
-<?php include "templates/footer.php"; ?>
+<?php include "../templates/footer.php"; ?>
